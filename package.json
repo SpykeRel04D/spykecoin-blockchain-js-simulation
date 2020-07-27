@@ -5,7 +5,7 @@
   "main": "src/blockchain.js",
   "dependencies": {
     "elliptic": "^6.5.3",
-    "hash.js": "`1.1.7"
+    "hash.js": "^1.1.7"
   },
   "devDependencies": {},
   "repository": {
