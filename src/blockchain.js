@@ -73,7 +73,7 @@ class Block {
      * @param {Transaction[]} transactions
      * @param {string} previousHash
     */
-    constructor(timestamp, transactions, previousHash = '') {
+    constructor(timestamp, transactions, previousHash) {
         this.timestamp = timestamp;
         this.transactions = transactions;
         this.previousHash = previousHash;
