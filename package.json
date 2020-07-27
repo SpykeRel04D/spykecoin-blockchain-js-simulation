@@ -1,5 +1,5 @@
 {
-  "name": "spykecoin",
+  "name": "@spykerel04d/spykecoin",
   "version": "1.0.0",
   "description": "Simple simulation of Cryptocurrency using Javascript",
   "main": "blockchain.js",
@@ -23,5 +23,5 @@
     "url": "https://github.com/SpykeRel04D/spykecoin-blockchain-js-simulation/issues"
   },
   "homepage": "https://github.com/SpykeRel04D/spykecoin-blockchain-js-simulation#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@SpykeRel04D" }
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
