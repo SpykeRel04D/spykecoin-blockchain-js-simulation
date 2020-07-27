@@ -1,0 +1,27 @@
+{
+  "name": "spykecoin",
+  "version": "1.0.0",
+  "description": "Simple simulation of Cryptocurrency using Javascript",
+  "main": "blockchain.js",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpykeRel04D/spykecoin-blockchain-js-simulation.git"
+  },
+  "keywords": [
+    "Blockchain",
+    "spykecoin",
+    "cryptocurrency"
+  ],
+  "author": "SpykeRel04D",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SpykeRel04D/spykecoin-blockchain-js-simulation/issues"
+  },
+  "homepage": "https://github.com/SpykeRel04D/spykecoin-blockchain-js-simulation#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@SpykeRel04D" }
+}
