@@ -189,7 +189,23 @@ class Blockchain {
             }
         }
 
+        console.log("getBalanceOfAddress: ",balance);
         return balance;
+    }
+
+    getAllTransactionsForWallet(address) {
+        const txs = [];
+    
+        for (const block of this.chain) {
+          for (const tx of block.transactions) {
+            if (tx.fromAddress === address || tx.toAddress === address) {
+              txs.push(tx);
+            }
+          }
+        }
+    
+        console.log("Get transactions for wallet count: ", txs.length);
+        return txs;
     }
 
     isChainValid() {
