@@ -4,7 +4,6 @@
   "description": "Simple simulation of Cryptocurrency using Javascript",
   "main": "blockchain.js",
   "dependencies": {
-    "crypto": "^1.0.1",
     "elliptic": "^6.5.3"
   },
   "devDependencies": {},
