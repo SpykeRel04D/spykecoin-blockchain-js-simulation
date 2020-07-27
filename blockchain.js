@@ -209,9 +209,14 @@ class Blockchain {
     }
 
     isChainValid() {
-        for (var i = 1; i < this.chain.length; i++) {
+
+        const realGenesis = JSON.stringify(this.createGenesisBlock());
+        if (realGenesis !== JSON.stringify(this.chain[0])) {
+            return false;
+        }
+
+        for (let i = 1; i < this.chain.length; i++) {
             const currentBlock = this.chain[i];
-            const previousBlock = this.chain[i -1];
 
             if (!currentBlock.hasValidTransaction()) {
                 return false;
@@ -221,9 +226,6 @@ class Blockchain {
                 return false;
             }
 
-            if (currentBlock.previousHash !== previousBlock.hash) {
-                return false;
-            }
         }
         return true;
     }
