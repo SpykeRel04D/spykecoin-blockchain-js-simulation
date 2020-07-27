@@ -1,4 +1,4 @@
-const SHA256 = require('crypto-js/sha256');
+const crypto = require('crypto');
 const EC = require('elliptic').ec;
 const ec = new EC('secp256k1');
 
@@ -21,7 +21,7 @@ class Transaction {
      * @returns {string}
     */
     calculateHash() {
-        return SHA256(this.fromAddress + this.toAddress + this.amount + this.timestamp).toString;
+        return crypto.createHash('sha256').update(this.fromAddress + this.toAddress + this.amount + this.timestamp).digest('hex');
     }
 
     /**
@@ -88,7 +88,7 @@ class Block {
      * @returns {string}
     */
     calculateHash() {
-        return SHA256(this.timestamp + this.previousHash + JSON.stringify(this.transactions) + this.nonce).toString();
+        return crypto.createHash('sha256').update(this.previousHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).digest('hex');
     }
 
     /**
