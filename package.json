@@ -1,6 +1,6 @@
 {
   "name": "@spykerel04d/spykecoin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple simulation of Cryptocurrency using Javascript",
   "main": "src/blockchain.js",
   "dependencies": {
