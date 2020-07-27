@@ -153,7 +153,6 @@ class Blockchain {
     }
 
     addTransaction(transaction) {
-
         if (!transaction.fromAddress || !transaction.toAddress) {
             throw new Error('Transaction must include from and to Address')
         }
@@ -162,7 +161,17 @@ class Blockchain {
             throw new Error('Cannot add invalid transaction to chain')
         }
 
+        if (transaction.amount <= 0) {
+            throw new Error('Transaction amount should be higher than 0');
+        }
+
+        if (this.getBalanceOfAddress(transaction.fromAddress) < transaction.amount) {
+            throw new Error('Not enough balance');
+        }
+
         this.pendingTransactions.push(transaction);
+
+        console.log("Transaction added: ", transaction);
     }
 
     getBalanceOfAddress(address) {
