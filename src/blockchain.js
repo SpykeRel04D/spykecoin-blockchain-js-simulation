@@ -101,6 +101,7 @@ class Block {
         while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")) {
             this.nonce++;
             this.hash = this.calculateHash();
+            this.previousHash = this.getLatestBlock().hash;
         }
 
         console.log("Block mined: " + this.hash);
