@@ -73,10 +73,10 @@ class Block {
      * @param {Transaction[]} transactions
      * @param {string} previousHash
     */
-    constructor(timestamp, transactions, previousHash) {
+    constructor(timestamp, transactions, previousHash = '') {
+        this.previousHash = previousHash;
         this.timestamp = timestamp;
         this.transactions = transactions;
-        this.previousHash = previousHash;
         this.nonce = 0;
         this.hash = this.calculateHash();
     }
@@ -101,7 +101,6 @@ class Block {
         while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")) {
             this.nonce++;
             this.hash = this.calculateHash();
-            this.previousHash = this.getLatestBlock().hash;
         }
 
         console.log("Block mined: " + this.hash);
@@ -160,7 +159,7 @@ class Blockchain {
         const rewardTx = new Transaction(null, miningRewardAddress, this.miningReward);
         this.pendingTransactions.push(rewardTx);
 
-        const block = new Block(Date.now(), this.pendingTransactions, this.pendingTransactions, this.getLatestBlock().hash);
+        let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
         block.mineBlock(this.difficulty);
 
         console.log("Block successfully mined!");
